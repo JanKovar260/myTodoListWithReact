@@ -1,0 +1,64 @@
+.task {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    background-color: white;
+    border-radius: 30px;
+    min-width: 500px;
+    right: 30px;
+}
+
+.task li {
+    height: 60px;
+    flex: 1;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task .check {
+    font-size: 1.4em;
+    position: relative;
+    border: none;
+    background-color: white;
+    color: red;
+    top: 3px;
+    cursor: pointer;
+    left: 5px;
+}
+
+.task .cross {
+    font-size: 1.4em;
+    position: relative;
+    border: none;
+    background-color: white;
+    color: red;
+    top: 3px;
+    cursor: pointer;
+    border-radius: 60px;
+    left: 5px;
+}
+
+.task button:hover {
+    opacity: 30%;
+    transition-timing-function:ease-in-out;
+    transition: 0.5s;
+}
+
+.check, .cross {
+    position: absolute;
+    font-size: 1px;
+    display: block;
+    margin: 10px 0;
+}
+
+.completed {
+    opacity: 50%;
+    text-decoration: line-through;
+}

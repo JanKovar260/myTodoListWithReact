@@ -1,0 +1,30 @@
+.task-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+input {
+    border: none;
+    border-radius: 30px;
+    width: 600px;
+    height: 40px;
+}
+
+form button {
+    font-size: 1.4em;
+    position: relative;
+    right: 40px;
+    border: none;
+    background-color: white;
+    color: red;
+    top: 3px;
+    cursor: pointer;
+}
+
+form button:hover {
+    opacity: 30%;
+    transition-timing-function:ease-in-out;
+    transition: 0.5s;
+}

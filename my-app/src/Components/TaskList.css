@@ -1,0 +1,12 @@
+.task-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+
+
+div {
+    padding: 10px;
+}

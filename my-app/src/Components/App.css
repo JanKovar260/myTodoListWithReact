@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+body {
+    background-image: linear-gradient(to right, rgba(255,0,0,1), rgba(187, 255, 0, 0));
+}
+
+.app {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    font-size: 90px;
+    font-family: 'Indie Flower', cursive;
+}
