@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 
+*{
+    outline: none;
+}
+
 body {
     background-image: linear-gradient(to right, rgba(255,0,0,1), rgba(187, 255, 0, 0));
 }

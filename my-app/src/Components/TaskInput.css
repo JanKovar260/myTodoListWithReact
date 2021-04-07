@@ -6,10 +6,13 @@
 }
 
 input {
+    padding-left: 35px;
     border: none;
     border-radius: 30px;
-    width: 600px;
     height: 40px;
+    width: 600px;
+    min-width: 50px;
+    max-width: 600px;
 }
 
 form button {
@@ -28,3 +31,6 @@ form button:hover {
     transition-timing-function:ease-in-out;
     transition: 0.5s;
 }
+
+padding: 0.5rem;
+    font-size: 2rem;

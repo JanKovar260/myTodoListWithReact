@@ -22,17 +22,18 @@ export default class App extends React.Component {
 
     handleAddNewTask = (e) => {
         e.preventDefault();
-        this.setState({
-            taskList: [
-                ...this.state.taskList,
-                {
-                    text: this.state.input,
-                    status: false,
-                    id: new Date(),
-                },
-            ],
-        });
-        this.setState({ input: '' });
+        if (this.state.input !== '')
+            this.setState({
+                taskList: [
+                    ...this.state.taskList,
+                    {
+                        text: this.state.input,
+                        status: false,
+                        id: new Date(),
+                    },
+                ],
+            });
+            this.setState({ input: '' });
     };
 
     handleStatusChange = (task) => {
