@@ -6,7 +6,7 @@ import './App.css';
 
 export default class App extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
             input: '',
@@ -14,7 +14,6 @@ export default class App extends React.Component {
             image: null,
         };
     }
-
 
     handleInput = (e) => {
         this.setState({ input: e.target.value });
@@ -33,7 +32,7 @@ export default class App extends React.Component {
                     },
                 ],
             });
-            this.setState({ input: '' });
+        this.setState({ input: '' });
     };
 
     handleStatusChange = (task) => {
