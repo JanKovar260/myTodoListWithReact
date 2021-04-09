@@ -1,11 +1,11 @@
 import React from 'react';
 import './TaskInput.css';
 
-const TaskInput = ({ inputValue, handleInput, handleAddNewTask }) => {
+const TaskInput = ({ inputValue, handleInput, handleAddNewTask, placeholderText }) => {
     return (
         <div className="task-input">
             <form>
-                <input value={inputValue} onChange={handleInput} />
+                <input placeholder={placeholderText} value={inputValue} onChange={handleInput} />
                 <button value={inputValue} onClick={handleAddNewTask}>
                     <i className="fas fa-plus-circle"></i>
                 </button>
@@ -13,5 +13,7 @@ const TaskInput = ({ inputValue, handleInput, handleAddNewTask }) => {
         </div>
     );
 };
+
+
 
 export default TaskInput;

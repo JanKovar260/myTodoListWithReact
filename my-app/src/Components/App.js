@@ -12,6 +12,7 @@ export default class App extends React.Component {
             input: '',
             taskList: [],
             image: null,
+            placeholderText: 'Here you can put in a new task',
         };
     }
 
@@ -21,7 +22,7 @@ export default class App extends React.Component {
 
     handleAddNewTask = (e) => {
         e.preventDefault();
-        if (this.state.input !== '')
+        if (this.state.input !== '') {
             this.setState({
                 taskList: [
                     ...this.state.taskList,
@@ -32,6 +33,15 @@ export default class App extends React.Component {
                     },
                 ],
             });
+            this.setState({
+                placeholderText: 'You can add another task'
+            });
+        }
+        if (this.state.input === '') {
+            this.setState({
+                placeholderText: 'You need to write something before submitting'
+            });
+        }
         this.setState({ input: '' });
     };
 
@@ -56,7 +66,6 @@ export default class App extends React.Component {
             ...prevState,
             image: url,
         }));
-        console.log(this.state.image);
     };
 
     componentDidMount() {
@@ -68,7 +77,6 @@ export default class App extends React.Component {
 
     componentDidUpdate() {
         localStorage.setItem('taskList', JSON.stringify(this.state.taskList));
-        console.log(this.state.image);
     }
 
     render() {
@@ -80,6 +88,7 @@ export default class App extends React.Component {
                     handleImage={this.handleImage}
                 />
                 <TaskInput
+                    placeholderText={this.state.placeholderText}
                     inputValue={this.state.input}
                     handleInput={this.handleInput}
                     handleAddNewTask={this.handleAddNewTask}
