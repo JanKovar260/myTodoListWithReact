@@ -22,7 +22,7 @@ export default class App extends React.Component {
 
     handleAddNewTask = (e) => {
         e.preventDefault();
-        if (this.state.input !== '') {
+        if (this.state.input) {
             this.setState({
                 taskList: [
                     ...this.state.taskList,
@@ -32,17 +32,15 @@ export default class App extends React.Component {
                         id: new Date(),
                     },
                 ],
+                placeholderText: 'You can add another task',
+                input: '',
             });
+        } else {
             this.setState({
-                placeholderText: 'You can add another task'
+                placeholderText:
+                    'You need to write something before submitting',
             });
         }
-        if (this.state.input === '') {
-            this.setState({
-                placeholderText: 'You need to write something before submitting'
-            });
-        }
-        this.setState({ input: '' });
     };
 
     handleStatusChange = (task) => {
@@ -55,24 +53,25 @@ export default class App extends React.Component {
     };
 
     handleDeleteItem = (task) => {
-        this.setState((prevState) => ({
-            ...prevState,
+        this.setState({
             taskList: this.state.taskList.filter((item) => item.id !== task.id),
-        }));
+        });
     };
 
     handleImage = (url) => {
-        this.setState((prevState) => ({
-            ...prevState,
+        this.setState({
             image: url,
-        }));
+        });
     };
 
     componentDidMount() {
-        this.setState((prevState) => ({
-            ...prevState,
-            taskList: JSON.parse(localStorage.getItem('taskList')),
-        }));
+        if (localStorage.getItem('taskList') == null) {
+            localStorage.setItem('todoList', JSON.stringify([]));
+        } else {
+            this.setState({
+                taskList: JSON.parse(localStorage.getItem('taskList')),
+            });
+        }
     }
 
     componentDidUpdate() {

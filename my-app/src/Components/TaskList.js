@@ -4,10 +4,9 @@ import './TaskList.css';
 
 const TaskList = ({ taskList, handleDeleteItem, handleStatusChange }) => {
     const tasks = taskList.map((task) => (
-        <div>
+        <div key={task.id}>
             <Task
                 status={task.status}
-                key={task.id}
                 task={task}
                 handleStatusChange={handleStatusChange}
                 handleDeleteItem={handleDeleteItem}
