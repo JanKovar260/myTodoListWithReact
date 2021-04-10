@@ -102,8 +102,3 @@ export default class App extends React.Component {
         );
     }
 }
-
-// { this.state.image
-//   ? <PictureAPI image={this.state.image} handleImage={this.handleImage}/>
-//   : <p>...</p>
-//   }
